@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://ap.greatfuturetechno.com',
+  // baseUrl: 'https://ap.greatfuturetechno.com',
+  baseUrl: 'https://apgreatfuturetechno.netlify.app',
 };
 
 /*
