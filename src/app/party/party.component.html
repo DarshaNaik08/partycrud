@@ -1,0 +1,73 @@
+<div class="container">
+  <div class="d-flex justify-content-center">
+  <h2>List of Parties</h2>
+  <a routerLink="create-party"><button class="btn btn-success mt-4">Create Request</button></a>
+</div>
+    <ng-container>
+  
+      <div class="p-4" style="background-color: #fff; border-radius: 0.5rem; box-shadow: 0 3px 10px rgb(0 0 0 / 0.3);">
+      <form>
+        <div class="table-responsive" style="max-height: 100vh; overflow-y: auto;">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Company Name</th>
+              <th scope="col">email</th>
+              <th scope="col">mobile no</th>
+              <th scope="col">pan no</th>
+              <th scope="col">gstIN</th>
+              <th scope="col">Remark</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+                <tr *ngFor= "let row of partyDetails | paginate:config ;">
+              <ng-container>
+                <th scope="row"> 
+                    <a>{{row.name}}</a>
+                </th>
+                <td>{{row.company_name}}</td>
+                <td>{{row.email}}</td>
+                <td>{{row.mobile_no}}</td> 
+                <td>{{row.pan_no}}</td>
+                <td>{{row.gstin}}</td>                
+                <td>{{row.remark}}</td> 
+                <td><button class="btn btn-icon btn-view"
+                  title="View Contact"
+                  (click)="viewParty(row.id)"
+                >
+                <i class="fas fa-eye" title="View"></i></button>
+                <button class="btn btn-icon btn-edit" 
+                  title="Edit Contact"
+                  (click)="editParty(row.id)"
+                ><i class="fas fa-edit" title="Edit"></i></button>
+                <button class="btn btn-icon btn-delete"
+                  title="Delete Contact"
+                  (click)="deleteParty(row.id)"
+                >
+                <i class="fas fa-trash" title="Delete"></i></button>
+                
+              </td>
+              </ng-container>
+
+            </tr>
+            <pagination-controls (pageChange)="pageChange1($event)" previousLabel="" nextLabel=""
+            class="my-pagination"></pagination-controls>
+          </tbody>
+        </table>
+        </div>
+      </form>
+      </div>
+
+     
+    </ng-container>
+  
+  </div>
+
+
+ 
+  
+  
+  

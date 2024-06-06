@@ -1,0 +1,100 @@
+<div class="text-center">
+  <h1>Party Details</h1>
+</div>
+<div class="p-4" style="max-height: 90vh; overflow:auto;">
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row" style="width: 150px;">Name</th>
+            <td>{{partyDetails.name}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Company Name</th>
+            <td>{{partyDetails.company_name}}</td>
+          </tr>
+          <tr>
+            <th scope="row">Mobile Number</th>
+            <td>{{ partyDetails.mobile_no }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Telephone Number</th>
+            <td>{{ partyDetails.telephone_no }}</td>
+          </tr>
+          <tr>
+            <th scope="row">WhatsApp Number</th>
+            <td>{{ partyDetails.whatsapp_no }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Email</th>
+            <td>{{ partyDetails.email }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Remark</th>
+            <td>{{ partyDetails.remark }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Date of Birth</th>
+            <td>{{ partyDetails.date_of_birth }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Anniversary Date</th>
+            <td>{{ partyDetails.anniversary_date }}</td>
+          </tr>
+          <tr>
+            <th scope="row">GSTIN</th>
+            <td>{{ partyDetails.gstin }}</td>
+          </tr>
+          <tr>
+            <th scope="row">PAN Number</th>
+            <td>{{ partyDetails.pan_no }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Apply TDS</th>
+            <td>{{ partyDetails.apply_tds ? 'Yes' : 'No' }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Credit Limit</th>
+            <td>{{ partyDetails.credit_limit }}</td>
+          </tr>
+          <tr>
+            <th scope="row">Status</th>
+            <td>{{ partyDetails.is_active ? 'Active' : 'Inactive' }}</td>
+          </tr>     
+          <tr *ngFor="let address of partyDetails.address; let i = index">
+            <th colspan="2">Address {{ i + 1 }}</th>
+          </tr>
+          <tr *ngFor="let address of partyDetails.address">
+            <td colspan="2">
+              <div>
+                <strong>Address Line 1:</strong> {{ address.address_line_1 }}<br>
+                <strong>Address Line 2:</strong> {{ address.address_line_2 }}<br>
+                <strong>City:</strong> {{ address.city }}<br>
+                <strong>State:</strong> {{ address.state }}<br>
+                <strong>Country:</strong> {{ address.country }}<br>
+                <strong>Pincode:</strong> {{ address.pincode }}<br>
+              </div>
+            </td>
+          </tr>
+          <tr *ngFor="let bankDetail of partyDetails.bank_id; let j = index">
+            <th colspan="2">Bank {{ j + 1 }}</th>
+          </tr>
+          <tr *ngFor="let bankDetail of partyDetails.bank_id">
+            <td colspan="2">
+              <div>
+                <strong>Bank IFSC Code:</strong> {{ bankDetail.bank_ifsc_code }}<br>
+                <strong>Bank Name:</strong> {{ bankDetail.bank_name }}<br>
+                <strong>Branch Name:</strong> {{ bankDetail.branch_name }}<br>
+                <strong>Account Number:</strong> {{ bankDetail.account_no }}<br>
+                <strong>Account Holder Name:</strong> {{ bankDetail.account_holder_name }}<br>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

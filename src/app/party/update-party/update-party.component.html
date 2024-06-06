@@ -1,0 +1,126 @@
+<div style="max-height: 90vh; overflow:auto;">
+<div class="container">
+    <h1 class="text-center">Update Party Details</h1>
+    <form [formGroup]="partyForm" (ngSubmit)="onSubmit()" class="p-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" formControlName="name">
+          </div>
+          <div class="form-group">
+            <label for="company_name">Company Name</label>
+            <input type="text" id="company_name" class="form-control" formControlName="company_name">
+          </div>
+          <div class="form-group">
+            <label for="mobile_no">Mobile Number</label>
+            <input type="text" id="mobile_no" class="form-control" formControlName="mobile_no">
+          </div>
+          <div class="form-group">
+            <label for="telephone_no">Telephone Number</label>
+            <input type="text" id="telephone_no" class="form-control" formControlName="telephone_no">
+          </div>
+          <div class="form-group">
+            <label for="whatsapp_no">WhatsApp Number</label>
+            <input type="text" id="whatsapp_no" class="form-control" formControlName="whatsapp_no">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" class="form-control" formControlName="email">
+          </div>
+          <div class="form-group">
+            <label for="remark">Remark</label>
+            <input type="text" id="remark" class="form-control" formControlName="remark">
+          </div>
+          <div class="form-group">
+            <label for="date_of_birth">Date of Birth</label>
+            <input type="date" id="date_of_birth" class="form-control" formControlName="date_of_birth">
+          </div>
+          <div class="form-group">
+            <label for="anniversary_date">Anniversary Date</label>
+            <input type="date" id="anniversary_date" class="form-control" formControlName="anniversary_date">
+          </div>
+          <div class="form-group">
+            <label for="gstin">GSTIN</label>
+            <input type="text" id="gstin" class="form-control" formControlName="gstin">
+          </div>
+          <div class="form-group">
+            <label for="pan_no">PAN Number</label>
+            <input type="text" id="pan_no" class="form-control" formControlName="pan_no">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="apply_tds" class="form-check-input" formControlName="apply_tds">
+            <label class="form-check-label" for="apply_tds">Apply TDS</label>
+          </div>
+          <div class="form-group">
+            <label for="credit_limit">Credit Limit</label>
+            <input type="text" id="credit_limit" class="form-control" formControlName="credit_limit">
+          </div>
+          <div class="form-group form-check">
+            <input type="checkbox" id="is_active" class="form-check-input" formControlName="is_active">
+            <label class="form-check-label" for="is_active">Active</label>
+          </div>
+          <div formArrayName="address">
+            <div *ngFor="let address of addressForms.controls; let i=index" [formGroupName]="i" class="border p-3 mb-2">
+              <h5>Address {{ i + 1 }}</h5>
+              <div class="form-group">
+                <label for="address_line_1">Address Line 1</label>
+                <input type="text" id="address_line_1" class="form-control" formControlName="address_line_1">
+              </div>
+              <div class="form-group">
+                <label for="address_line_2">Address Line 2</label>
+                <input type="text" id="address_line_2" class="form-control" formControlName="address_line_2">
+              </div>
+              <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" class="form-control" formControlName="city">
+              </div>
+              <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control" formControlName="state">
+              </div>
+              <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" class="form-control" formControlName="country">
+              </div>
+              <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" id="pincode" class="form-control" formControlName="pincode">
+              </div>
+              <button type="button" class="btn btn-danger mt-2" (click)="removeAddress(i)">Remove Address</button>
+            </div>
+            <button type="button" class="btn btn-primary mb-2" (click)="addAddress()">Add Address</button>
+          </div>
+          <div formArrayName="bank_id">
+            <div *ngFor="let bank of bankForms.controls; let j=index" [formGroupName]="j" class="border p-3 mb-2">
+              <h5>Bank {{ j + 1 }}</h5>
+              <div class="form-group">
+                <label for="bank_ifsc_code">Bank IFSC Code</label>
+                <input type="text" id="bank_ifsc_code" class="form-control" formControlName="bank_ifsc_code">
+              </div>
+              <div class="form-group">
+                <label for="bank_name">Bank Name</label>
+                <input type="text" id="bank_name" class="form-control" formControlName="bank_name">
+              </div>
+              <div class="form-group">
+                <label for="branch_name">Branch Name</label>
+                <input type="text" id="branch_name" class="form-control" formControlName="branch_name">
+              </div>
+              <div class="form-group">
+                <label for="account_no">Account Number</label>
+                <input type="text" id="account_no" class="form-control" formControlName="account_no">
+              </div>
+              <div class="form-group">
+                <label for="account_holder_name">Account Holder Name</label>
+                <input type="text" id="account_holder_name" class="form-control" formControlName="account_holder_name">
+              </div>
+              <button type="button" class="btn btn-danger mt-2 mb-2 " (click)="removeBank(j)">Remove Bank</button>
+            </div>
+            <button type="button" class="btn btn-primary" (click)="addBank()">Add Bank</button>
+          </div>
+          <button type="submit" class="btn btn-success mt-2">Update Party</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

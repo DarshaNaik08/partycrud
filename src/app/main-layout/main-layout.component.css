@@ -1,0 +1,21 @@
+.sidebar {
+    transition: width 0.3s ease;
+    height: calc(205vh - 115vh);
+  }
+  
+  .sidebar.collapse {
+    width: 20px;
+    overflow: hidden;
+  }
+  
+  .bldg{position: absolute;
+    left: 5px;
+}
+
+.toggle-btn{border: none; 
+background:none;
+margin-right:20px;}
+
+i{font-size:20px;}
+
+.nav-item{margin-left: 15px;}

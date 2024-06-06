@@ -1,0 +1,26 @@
+body{overflow-y: auto;}
+.btn-icon {
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    font-size: 1.2rem;
+  }
+  .btn-icon i {
+    vertical-align: middle;
+  }
+  .btn-view {
+    color: #17a2b8; 
+  }
+  .btn-edit {
+    color: #ffc107;
+  }
+  .btn-delete {
+    color: #dc3545; 
+  }
+  .btn-icon:hover {
+    opacity: 0.8;
+  }
+
+  h2{
+    margin: 20px;
+    flex: 1 1 auto;
+}
