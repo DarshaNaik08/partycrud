@@ -1,7 +1,6 @@
 import { Component, OnInit,  } from '@angular/core';
 import { PartyService } from '../services/party.service';
 import { ActivatedRoute, Router } from '@angular/router';
- import { NgbActiveModal, NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { map } from 'rxjs';
 import { FormBuilder, FormGroup } from '@angular/forms';
 
@@ -15,7 +14,7 @@ partyDetails:any= [];
   config: any;
   selectedPartyId: any;
   
-  constructor(private partyapi: PartyService, private route: ActivatedRoute, private router : Router, private modalService: NgbModal,private fb: FormBuilder) {
+  constructor(private partyapi: PartyService, private route: ActivatedRoute, private router : Router, private fb: FormBuilder) {
    }
   
   ngOnInit(): void {
